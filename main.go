@@ -31,7 +31,9 @@ func main() {
     }
 	
 	b.Handle("/roll", func(m *tb.Message) {
-		m.Dice.Send(b, strconv.FormatInt(m.Chat.ID, 10), &tb.SendOptions{})
+		kek := tb.Recipient(m.Chat)
+		m.Dice = telebot.Cube
+		m.Dice.Send(b, kek, &tb.SendOptions{})
 	})
 	
 	b.Start()
