@@ -28,15 +28,11 @@ type Recipient interface {
     Recipient() string
 }
 
-type Dice struct {
-    Type  DiceType `json:"emoji"`
-    Value int      `json:"value"`
-}
     b, err := tb.NewBot(pref)
     if err != nil {
         log.Fatal(err)
     }
-	b.Handle("/roll", func (*Dice) Send)
+	b.Handle("/roll", func (d *Dice) Send)
 	
 	b.Start()
 }
