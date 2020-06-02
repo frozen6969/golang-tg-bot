@@ -3,6 +3,7 @@ package main
 import (
     "log"
     "os"
+	"strings"
 
     tb "gopkg.in/tucnak/telebot.v2"
 )
