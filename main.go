@@ -33,7 +33,7 @@ type Recipient interface {
         log.Fatal(err)
     }
 	b.Handle("/roll", func (d *Dice)
-	)
+	})
 	
 	b.Start()
 }
