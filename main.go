@@ -32,8 +32,7 @@ type Recipient interface {
     if err != nil {
         log.Fatal(err)
     }
-	b.Handle("/roll", func (*Dice) Send
-	})
+	b.Handle("/roll", func (*Dice) Send)
 	
 	b.Start()
 }
