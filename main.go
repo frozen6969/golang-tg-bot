@@ -31,7 +31,7 @@ func main() {
 	
 	b.Handle("/roll", func(m *tb.Message) {
 		kek := tb.Recipient(m.Chat)
-		m.Dice = telebot.Cube
+		m.Dice = tb.Cube
 		m.Dice.Send(b, kek, &tb.SendOptions{})
 	})
 	
