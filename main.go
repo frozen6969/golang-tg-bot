@@ -4,7 +4,6 @@ import (
     "log"
     "os"
 	"strconv"
-	"time"
 
     tb "gopkg.in/tucnak/telebot.v2"
 )
@@ -30,12 +29,6 @@ type Recipient interface {
     Recipient() string
 }
 
-type DiceType string
-
-type Dice struct {
-    Type  DiceType `json:"emoji"`
-    Value int      `json:"value"`
-}
     b, err := tb.NewBot(pref)
     if err != nil {
         log.Fatal(err)
