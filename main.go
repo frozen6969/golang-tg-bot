@@ -38,7 +38,10 @@ type Dice struct {
     if err != nil {
         log.Fatal(err)
     }
-	b.Handle("/roll", func (d *Dice) Send)
+	
+	b.Handle("/roll", func (m *tb.message) {
+	m.Dice.Send(b, strconv.FormatInt(m.Chat.ID, 10), &tb.SendOptions{})
+	})
 	
 	b.Start()
 }
