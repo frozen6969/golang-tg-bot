@@ -47,9 +47,10 @@ func main() {
 	})
 	b.Handle("/fag", func(m *tb.Message) {
 	b.Send(m.Sender, "Hello fag!" &tb.SendOptions{
-		ReplyTo:m}
+		ReplyTo:m,
+		})
 		)
-	})
+	}
 	
 	b.Start()
 
