@@ -24,17 +24,13 @@ func main() {
         Token:  token,
         Poller: webhook,
     }
-type Recipient interface {
-    // Must return legit Telegram chat_id or username
-    Recipient() string
-}
 
     b, err := tb.NewBot(pref)
     if err != nil {
         log.Fatal(err)
     }
 	
-	b.Handle("/roll", func (m *tb.message) {
+	b.Handle("/roll", func (m *tb.Message) {
 	m.Dice.Send(b, strconv.FormatInt(m.Chat.ID, 10), &tb.SendOptions{})
 	})
 	
