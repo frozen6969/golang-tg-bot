@@ -3,7 +3,6 @@ package main
 import (
     "log"
     "os"
-	"strings"
 
     tb "gopkg.in/tucnak/telebot.v2"
 )
@@ -38,10 +37,9 @@ func main() {
 			})
 	})
 	b.Handle("/darts", func(m *tb.Message) {
-		msg := strings.Split(m.Text, "")
-		dice_type = tb.Dart
-		m.Dice = dice_type
 		kek := tb.Recipient(m.Chat)
+		m.Dice = dice_type
+		dice_type = tb.Dart
 		m.Dice.Send(b, kek, &tb.SendOptions{
 			ReplyTo:m,
 			})
