@@ -3,8 +3,6 @@ package main
 import (
     "log"
     "os"
-	"fmt"
-	"strings"
 
     tb "gopkg.in/tucnak/telebot.v2"
 )
@@ -35,7 +33,7 @@ type Recipient interface {
         log.Fatal(err)
     }
 	b.Handle("/roll", func (d *Dice) {
-	b.Send(b *ReplyTo *Message)
+	Send(b *ReplyTo *Message)
 	})
 	
 	b.Start()
