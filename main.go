@@ -30,8 +30,8 @@ func main() {
         log.Fatal(err)
     }
 	
-	b.Handle("/roll", func (m *tb.Message) {
-	m.Dice.Send(b, strconv.FormatInt(m.Chat.ID, 10), &tb.SendOptions{})
+	b.Handle("/roll", func(m *tb.Message) {
+		m.Dice.Send(b, strconv.FormatInt(m.Chat.ID, 10), &tb.SendOptions{})
 	})
 	
 	b.Start()
