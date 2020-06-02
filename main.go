@@ -34,8 +34,9 @@ type Recipient interface {
     if err != nil {
         log.Fatal(err)
     }
-	b.Handle("/roll", func (d *Dice) Send(b *ReplyTo *Message),
-	}
+	b.Handle("/roll", func (d *Dice) {
+	b.Send(b *ReplyTo *Message)
+	}}
 	
 	b.Start()
 }
