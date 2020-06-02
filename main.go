@@ -3,6 +3,8 @@ package main
 import (
     "log"
     "os"
+	"fmt"
+	"strings"
 
     tb "gopkg.in/tucnak/telebot.v2"
 )
@@ -28,8 +30,8 @@ func main() {
     if err != nil {
         log.Fatal(err)
     }
-	b.Handle("/hello", func(m *tb.Message) {
-		b.Send(m.Sender, "Hi!")
-	})
+	b.Handle("/roll", func (d *Dice) Send(b *Bot, to Recipient, opt *SendOptions) (*Message, error) {
+	}}
+	
 	b.Start()
 }
