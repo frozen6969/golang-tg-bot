@@ -35,7 +35,8 @@ func main() {
 		m.Dice.Send(b, kek, &tb.SendOptions{
 			ReplyTo:m,
 			})
-	b.Handle("/dart", func(m *tb.Message) {
+			}
+	b.Handle("/darts", func(m *tb.Message) {
 		msg := strings.Split(m.Text, "")
 		dice_type := tb.Cube
 		if len(msg) > 1 {
