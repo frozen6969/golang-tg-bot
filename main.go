@@ -49,8 +49,7 @@ func main() {
 	b.Send(m.Sender, "Hello fag!" &tb.SendOptions{
 		ReplyTo:m,
 		})
-		)
-	}
+		})
 	
 	b.Start()
 
