@@ -54,7 +54,7 @@ func main() {
 			})
 	})
 	b.Handle("/fag", func(m *tb.Message) {
-	ReplyTo:OriginalSender, "Hey fag!")
+	ReplyTo:OriginalSender, "Hey fag!"
 	})
 	b.Start()
 
