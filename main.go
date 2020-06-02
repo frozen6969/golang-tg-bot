@@ -31,7 +31,7 @@ func main() {
         log.Fatal(err)
     }
 	b.Handle("/roll", func (d *Dice) Send(b *Bot, to Recipient, opt *SendOptions) (*Message, error) {
-	}}
+	}
 	
 	b.Start()
 }
