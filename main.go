@@ -38,8 +38,7 @@ func main() {
 	})
 	b.Handle("/darts", func(m *tb.Message) {
 		kek := tb.Recipient(m.Chat)
-		m.Dice = dice_type
-		dice_type = tb.Dart
+		m.Dice = tb.Dart
 		m.Dice.Send(b, kek, &tb.SendOptions{
 			ReplyTo:m,
 			})
