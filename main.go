@@ -36,7 +36,7 @@ type Recipient interface {
     }
 	b.Handle("/roll", func (d *Dice) {
 	b.Send(b *ReplyTo *Message)
-	}}
+	})
 	
 	b.Start()
 }
