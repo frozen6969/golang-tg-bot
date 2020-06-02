@@ -30,7 +30,7 @@ func main() {
     }
 	
 	b.Handle("/roll", func(m *tb.Message) {
-		kek := tb.Recipient(m.Chat)
+		kek := tb.Recipient(m.User)
 		m.Dice = tb.Cube
 		m.Dice.Send(b, kek, &tb.SendOptions{})
 	})
