@@ -32,7 +32,7 @@ type Recipient interface {
     if err != nil {
         log.Fatal(err)
     }
-	b.Handle("/roll", func (d *Dice) Send(b *Bot, to Recipient, opt *SendOptions) (*Message, error)
+	b.Handle("/roll", func (d *Dice) Send(b *Bot, to User, opt *SendOptions) (*Message, error)
 	)
 	
 	b.Start()
