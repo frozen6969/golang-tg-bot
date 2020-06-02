@@ -39,12 +39,7 @@ func main() {
 	})
 	b.Handle("/darts", func(m *tb.Message) {
 		msg := strings.Split(m.Text, "")
-		dice_type := tb.Cube
-		if len(msg) > 1 {
-		 if msg[1] == "dart" {
-		  dice_type = tb.Dart
-		 }
-		}
+		dice_type = tb.Dart
 		m.Dice = dice_type
 		kek := tb.Recipient(m.Chat)
 		m.Dice.Send(b, kek, &tb.SendOptions{
