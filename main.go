@@ -29,6 +29,15 @@ func main() {
         log.Fatal(err)
     }
 	
+	// Command: /start <PAYLOAD>
+	b.Handle("/start", func(m *tb.Message) {
+	if !m.Private() {
+		return
+	}
+
+	fmt.Println(m.Payload) // <PAYLOAD>
+})
+
 	b.Handle("/roll", func(m *tb.Message) {
 		kek := tb.Recipient(m.Chat)
 		m.Dice = tb.Cube
